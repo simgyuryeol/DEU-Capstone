@@ -40,12 +40,17 @@
    2. cmd 화면에서 명령어 실행
    
    
-    darknet detect cfg/yolov3.cfg yolov3.weights (yolo v3.weights파일 실행 -> 오류 원본 사진 그대로 출력됨)
+    darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg (yolo v3.weights파일 실행 -> 오류 원본 사진 그대로 출력됨)
    ![image](https://user-images.githubusercontent.com/66519915/128015190-4d00a20f-3802-4956-b713-69be107eeabb.png)
 
     darknet detect cfg/yolov3-tiny.cfg yolov3-tiny.weights data/dog.jpg (yolo v3 tiny.weights파일 실행 -> 객체 검출)
    ![image](https://user-images.githubusercontent.com/66519915/128015308-9f39465e-69fd-4916-bfee-68ad0c759d9b.png)
-
+   
+   
+   #### 웹 서버 문제
+   * 윈도우 환경에서는 http가 안된다는 문제를 제기함 
+ 
+  여러가지 웹 서버 방법들 소개
  
  
 
