@@ -12,21 +12,23 @@
  #### 빌드 방법
  
  * 사전 프로그램 설치
-  Visual Studio (2019 설치)
-  NVIDIA CUDA (10.2 설치)
-  NVIDIA cuDNN (CUDA에 맞게 10.2 설치)
-  OpenCV 2.4 이상 (4.2 설치)
-  Darknet
+ 
+       Visual Studio (2019 설치)
+       NVIDIA CUDA (10.2 설치)
+       NVIDIA cuDNN (CUDA에 맞게 10.2 설치)
+       OpenCV 2.4 이상 (4.2 설치)
+       Darknet
   
  * Darknet 빌드
-  1. Visual Studio 구동
-  2. 플랫폼 도구 집합 변경
-  3. 사용자 정의 빌드 확인
-  4. 헤더 파일 경로 추가
-  5. 라이브러리 경로 추가
-  6. Code Generation 수정
-  7. OpenCv관련 DLL 복사
-  8. 빌드
+ 
+       1. Visual Studio 구동
+       2. 플랫폼 도구 집합 변경
+       3. 사용자 정의 빌드 확인
+       4. 헤더 파일 경로 추가
+       5. 라이브러리 경로 추가
+       6. Code Generation 수정
+       7. OpenCv관련 DLL 복사
+       8. 빌드
   
   
    [window 10 Darknet 빌드 참고자료(1)](https://m.blog.naver.com/estern/221828977313)
@@ -35,9 +37,10 @@
    
    
    * YOLO 테스트
-   1. weights 파일 다운로드
-   [weights파일 다운](https://pjreddie.com/darknet/yolo/)
-   2. cmd 화면에서 명령어 실행
+   
+         1. weights 파일 다운로드
+         [weights파일 다운](https://pjreddie.com/darknet/yolo/)
+         2. cmd 화면에서 명령어 실행
    
    
     darknet detect cfg/yolov3.cfg yolov3.weights data/dog.jpg (yolo v3.weights파일 실행 -> 오류 원본 사진 그대로 출력됨)
@@ -55,6 +58,34 @@
   -> 결국 컴퓨터를 갈아서 리눅스를 설치하여 http를 사용하기로 결정
   
   -> 리눅스 환경에서 YOLO 실행 예정
+  
+  
+  
+  #### 데이터 학습
+   
+   * [YOLO Mark를 이용한 데이터 학습](https://ctkim.tistory.com/82)
+
+   * YOLO Mark 설치 및 실행
+   
+    1. YOLO Mark 설치
+    2. yolo_mark.sln 실행
+    3. 빌드환경 Release/x64 변경
+    4. OpenCv 경로 설정
+    5. 빌드
+    
+   * YOLO Mark를 이용한 Custom파일 만들기 (이미지 라벨링)
+     
+    1. img폴더에 라벨링할 이미지 다운
+    2. obj.names 설정
+    3. yolo_mark.cmd를 실행하여 이미지 라벨링
+
+   * 데이터 학습하기
+   
+    1. img, obj.data, obj.names, train.txt 파일을 확인후 darknet의 data폴더로 복사
+    2. cfg 파일을 알맞게 수정
+    3. 훈련을 위해 사전 훈련 된 컨볼루션 weight를 다운
+    4. darknet을 cmd로 실행시켜 학습 명령어 입력
+    5. 학습이 완료되면 weights파일 생성
    
  
 
